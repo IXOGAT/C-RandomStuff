@@ -60,9 +60,18 @@ namespace DonutFinder
                     Console.WriteLine("Allrighty! I will now generate a list of " + donuts + " random Krispy Kreme donuts!");
                     Console.WriteLine("GENERATING!");
                     Random rnd = new Random();
+                    int realisticCount = 0;
+                    if (donuts > 47)
+                    {
+                        realisticCount = 47;
+                    }
+                    else
+                    {
+                        realisticCount = donuts;
+                    }
                     for (int i = 0; i <= donuts; i++)
                     {
-                        System.IO.File.WriteAllText(@"D:\Users\temp.MOO\Source\Repos\C-RandomStuff\DonutFinder\DonutFinder\OutputDonuts.txt", regDonuts[rnd.Next(donuts)]);
+                        System.IO.File.WriteAllText(@"D:\Users\temp.MOO\Source\Repos\C-RandomStuff\DonutFinder\DonutFinder\OutputDonuts.txt", regDonuts[rnd.Next(realisticCount)]);
                     }
                     Console.WriteLine("Donut generation complete. Would you like to see the list of donuts?");
                 }
